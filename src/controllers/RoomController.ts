@@ -57,8 +57,9 @@ export class RoomController {
         try{
 
             const room = await roomRepository.find({
-                relations: {
-                    subjects: true
+                relations: { //Se quisermos que os "subjects" ou os "videos" que estão relacionados a um room sejam obtidos, devemos marcar essas opções como "true".
+                    subjects: true,
+                    videos: true
                 }
             })
 
